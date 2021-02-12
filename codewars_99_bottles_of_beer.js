@@ -42,6 +42,24 @@ Example
   "Go to the store and buy some more, 99 bottles of beer on the wall." ]
   */
 
-  var sing = function () {
-  // return the lyrics as a string ...
+ const sing = () => {
+  let bottles = 99;
+  let string = '';
+  while(bottles > -1) {
+    if(bottles > 2) {
+      string += bottles + ' bottles of beer on the wall, ' + bottles + ' bottles of beer. Take one down and pass it around, ' + (bottles - 1) + ' bottles of beer on the wall.  ';
+    }
+    if(bottles === 2) {
+      string += '  ' + bottles + ' bottles of beer on the wall, ' + bottles + ' bottles of beer. Take one down and pass it around, 1 bottle of beer on the wall.';
+    }
+    if(bottles === 1) {
+      string += '  ' + bottles + '  1 bottle of beer on the wall, 1 bottle of beer.  Take one down and pass it around, no more bottles of beer on the wall.'
+    }
+    if(bottles === 0) {
+      string += '  No more bottles of beer on the wall, no more bottles of beer.  Go to the store and buy some more, 99 bottles of beer on the wall.'
+    }
+    bottles--;
+  }
+  
+  return string;
 };
